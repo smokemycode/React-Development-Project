@@ -6,4 +6,16 @@
 
 body {
   font-family: sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+:root {
+  --bg-color: #fafafa;
+  --text-color: #111517;
+}
+
+[data-theme="dark"] {
+  --bg-color: #202c37;
+  --text-color: #ffffff;
 }
