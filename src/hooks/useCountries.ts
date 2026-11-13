@@ -37,15 +37,20 @@ export const useCountries = () => {
                 }
 
                 // Combine all objects from all the 3 pages into 1 array
-                const allCountries = [
+                const combinedObjects = [
                     ...page1.data.objects,
                     ...page2.data.objects,
                     ...page3.data.objects
                 ];
 
+                // Creates a set based on the uuid which removes duplicates
+                const uniqueCountries = Array.from(
+                    new Map(combinedObjects.map((item) => [item.uuid, item])).values()
+                );
+
                 // Save to cache and state
-                cachedCountries = allCountries;
-                setCountries(allCountries);
+                cachedCountries = uniqueCountries;
+                setCountries(uniqueCountries);
             } catch (error) {
                 setError(error instanceof Error ? error.message : 'An error occurred');
             } finally {

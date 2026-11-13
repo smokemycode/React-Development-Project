@@ -13,11 +13,13 @@ body {
 :root {
   --bg-color: #fafafa;
   --text-color: #111517;
+  --element-bg: #ffffff;
 }
 
 [data-theme="dark"] {
   --bg-color: #202c37;
   --text-color: #ffffff;
+  --element-bg: #2b3945;
 }
 
 .header {
@@ -71,4 +73,40 @@ body {
 .country-info p {
   margin-bottom: 0.5rem;
   font-size: 0.9rem;
+}
+
+.controls-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 2rem;
+  gap: 1rem;
+  /* Stacks them on mobile screens */
+  flex-wrap: wrap; 
+}
+
+.search-input, .region-select {
+  padding: 1rem;
+  border-radius: 4px;
+  border: none;
+  background-color: var(--element-bg);
+  color: var(--text-color);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  font-size: 1rem;
+  outline: none;
+}
+
+.search-input {
+  width: 100%;
+  max-width: 400px;
+}
+
+.region-select {
+  width: 200px;
+  cursor: pointer;
+}
+
+.no-results {
+  text-align: center;
+  padding: 3rem;
+  font-size: 1.2rem;
 }
