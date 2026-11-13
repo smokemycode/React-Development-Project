@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import type { Country } from "../types";
 
 interface CountryCardProps {
@@ -15,18 +16,23 @@ export const CountryCard = ({ country }: CountryCardProps) => {
 		country.flag?.url_svg || "https://via.placeholder.com/300x150?text=No+Flag";
 
 	return (
-		<div className="country-card">
-			<img
-				src={flagUrl}
-				alt={`Flag of ${country.names?.common || "Unknown"}`}
-				className="country-flag"
-			/>
-			<div className="country-info">
-				<h2>{country.names?.common || "Unknown Country"}</h2>
-				<p><strong>Population:</strong> {formattedPopulation || "N/A"}</p>
-				<p><strong>Region:</strong> {country.region || "N/A"}</p>
-				<p><strong>Capital:</strong> {country.capitals?.[0]?.name || "N/A"}</p>
+		// Wrap the entire card in a Link to the country detail page
+		<Link
+			to={`/country/${country.codes.alpha_3}`}
+			className="country-card-link">
+			<div className="country-card">
+				<img
+					src={flagUrl}
+					alt={`Flag of ${country.names?.common || "Unknown"}`}
+					className="country-flag"
+				/>
+				<div className="country-info">
+					<h2>{country.names?.common || "Unknown Country"}</h2>
+					<p><strong>Population:</strong> {formattedPopulation || "N/A"}</p>
+					<p><strong>Region:</strong> {country.region || "N/A"}</p>
+					<p><strong>Capital:</strong> {country.capitals?.[0]?.name || "N/A"}</p>
+				</div>
 			</div>
-		</div>
+		</Link>
 	);
 };

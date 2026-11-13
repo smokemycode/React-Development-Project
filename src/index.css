@@ -41,7 +41,6 @@ body {
 
 .countries-grid {
   display: grid;
-  /* This makes it responsive automatically */
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   gap: 2rem;
   padding: 2rem;
@@ -80,7 +79,6 @@ body {
   justify-content: space-between;
   padding: 2rem;
   gap: 1rem;
-  /* Stacks them on mobile screens */
   flex-wrap: wrap; 
 }
 
@@ -109,4 +107,76 @@ body {
   text-align: center;
   padding: 3rem;
   font-size: 1.2rem;
+}
+
+.country-card-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Detail Page Styles */
+.detail-container {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.back-button {
+  display: inline-block;
+  padding: 0.5rem 2rem;
+  margin-bottom: 3rem;
+  background-color: var(--element-bg);
+  color: var(--text-color);
+  text-decoration: none;
+  border-radius: 4px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.detail-content {
+  display: flex;
+  gap: 4rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.detail-flag {
+  width: 100%;
+  max-width: 500px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.detail-info {
+  flex: 1;
+}
+
+.detail-info h1 {
+  margin-bottom: 1.5rem;
+}
+
+.detail-columns {
+  display: flex;
+  gap: 4rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.detail-columns p {
+  margin-bottom: 0.5rem;
+}
+
+.border-countries {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.border-btn {
+  padding: 0.3rem 1rem;
+  background-color: var(--element-bg);
+  color: var(--text-color);
+  text-decoration: none;
+  border-radius: 4px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  font-size: 0.9rem;
 }

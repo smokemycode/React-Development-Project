@@ -10,6 +10,9 @@ export interface Country {
     names: {
         common: string;
         official: string;
+        native?: {
+            eng?: { common: string };
+        };
     };
     codes: {
         alpha_3: string;
@@ -18,6 +21,11 @@ export interface Country {
         url_svg: string;
     };
     region: string;
+    subregion?: string;
     population: number;
-    capitals: { name: string }[];
+    capitals?: { name: string }[];
+    tlds?: string[];
+    currencies?: { name: string }[];
+    languages?: { name: string }[];
+    borders?: string[];
 }
