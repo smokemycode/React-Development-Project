@@ -11,6 +11,7 @@ function App() {
 	// State for search term and selected region
 	const [searchTerm, setSearchTerm] = useState("");
 	const [selectedRegion, setSelectedRegion] = useState("");
+	console.log("Countries in App:", countries.length);
 
 	// Filter countries based on search term and selected region
 	const filteredCountries = countries.filter((country) => {
