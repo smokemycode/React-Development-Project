@@ -22,8 +22,6 @@ export const useCountries = () => {
 				setIsLoading(true);
 				const apiKey = import.meta.env.VITE_RESTCOUNTRIES_KEY;
 				const headers = { Authorization: `Bearer ${apiKey}` };
-				const baseUrl =
-					"https://api.restcountries.com/countries/v5?limit=100&page=";
 
 				// Fetch 3 pages one after another to get all 250 countries (100 + 100 + 50)
 				console.log("Fetching Page 1...");
